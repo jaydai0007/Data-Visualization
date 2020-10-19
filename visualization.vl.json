@@ -1,0 +1,37 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.json",
+  "width": 800,
+  "height": 500,
+  "title": "Australian bush fire brightness",
+  "projection": {"type": "mercator"},
+  "layer": [
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/jaydai0007/Data-Visualization/main/AUS_2016_AUST.json",
+        "format": {"type": "topojson", "feature": "AUS_2016_AUST"}
+      },
+      "mark": {"type": "geoshape", "fill": "lightgray", "stroke": "gray"}
+    },
+    {
+      "data": {
+        "url": "https://raw.githubusercontent.com/jaydai0007/Data-Visualization/main/fire_archive_M6_101673.csv"
+      },
+      "mark": {"type": "circle", "tooltip": {"content": "data"}},
+      "encoding": {
+        "longitude": {"field": "longitude", "type": "quantitative"},
+        "latitude": {"field": "latitude", "type": "quantitative"},
+        "size": {
+          "field": "track",
+          "type": "quantitative",
+          "scale": {"domain": [1, 5]}
+        },
+        "color": {
+          "field": "brightness",
+          "type": "quantitative",
+          "scale": {"scheme": "reds"}
+        }
+      }
+    }
+  ],
+  "config": {}
+}
