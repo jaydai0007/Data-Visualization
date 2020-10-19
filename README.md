@@ -1,2 +1,2 @@
 # Data-Visualization
-The visualiastion will be shown on https://github.com/jaydai0007/Data-Visualization/
+The visualiastion will be shown on  http://jaydai0007.github.io/
